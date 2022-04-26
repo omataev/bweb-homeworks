@@ -28,7 +28,7 @@ if (isset($_REQUEST['ajax_form']) && $_REQUEST['ajax_form'] == $sidAjax) {
     // Устанавливаем режим отладки для вывода отладочной информации
     window.BXDEBUG = true;
 
-    // Загружаем данные из запроа
+    // Загружаем данные
     function DEMOLoad() {
         // Скрываем DOM-элемент block
         BX.hide(BX("block"));
@@ -44,15 +44,15 @@ if (isset($_REQUEST['ajax_form']) && $_REQUEST['ajax_form'] == $sidAjax) {
 
     // Выводим полученные данные из запроса
     function DEMOResponse(data) {
-        // выводим отладочную информацию
+        // Выводим отладочную информацию
         BX.debug('AJAX-DEMOResponse ', data);
-        // устанавливаем в DOM-элемент block входной параметр функции
+        // Устанавливаем в DOM-элемент block входной параметр функции
         BX("block").innerHTML = data.RESULT;
-        // выводим DOM-элемент block
+        // Выводим DOM-элемент block
         BX.show(BX("block"));
-        // прячем DOM-элемент process
+        // Прячем DOM-элемент process
         BX.hide(BX("process"));
-        // вызываем обработчик события DEMOUpdate для объекта BX(BX("block"))
+        // Вызываем обработчик события DEMOUpdate для объекта BX(BX("block"))
         BX.onCustomEvent(
             BX(BX("block")),
             'DEMOUpdate'
@@ -69,9 +69,9 @@ if (isset($_REQUEST['ajax_form']) && $_REQUEST['ajax_form'] == $sidAjax) {
            window.location.href = window.location.href;
         });
         */
-        // прячем DOM-элемент block
+        // Прячем DOM-элемент block
         BX.hide(BX("block"));
-        // прячем DOM-элемент process
+        // Прячем DOM-элемент process
         BX.hide(BX("process"));
 
         /*
@@ -85,7 +85,7 @@ if (isset($_REQUEST['ajax_form']) && $_REQUEST['ajax_form'] == $sidAjax) {
                     e = window.event;
 
                 DEMOLoad();
-                // переопределяем действия браузера по умолчанию
+                // Переопределяем действия браузера по умолчанию
                 return BX.PreventDefault(e);
             }
         );
