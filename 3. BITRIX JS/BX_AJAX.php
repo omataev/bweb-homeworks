@@ -4,7 +4,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 //устанавливаем заголовок страницы
 $APPLICATION->SetTitle("AJAX");
 
-//подключаем ядр Bitrix JS и расширение Ajax
+// Подключаем ядр Bitrix JS и расширение Ajax
 CJSCore::Init(array('ajax'));
 $sidAjax = 'testAjax';
 if (isset($_REQUEST['ajax_form']) && $_REQUEST['ajax_form'] == $sidAjax) {
